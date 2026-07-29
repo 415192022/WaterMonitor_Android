@@ -1,0 +1,32 @@
+plugins {
+    alias(libs.plugins.android.library)
+    alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.kapt)
+    alias(libs.plugins.hilt)
+}
+
+android {
+    namespace 'com.lmw.watermonitorandroid.platform.network'
+    compileSdk 35
+
+    defaultConfig {
+        minSdk 24
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_11
+        targetCompatibility JavaVersion.VERSION_11
+    }
+}
+
+dependencies {
+    implementation libs.okhttp
+    implementation libs.okhttp.sse
+    implementation libs.okhttp.logging
+    implementation libs.retrofit
+    implementation libs.retrofit.converter.gson
+    implementation libs.gson
+
+    implementation libs.hilt.android
+    kapt libs.hilt.compiler
+}\
